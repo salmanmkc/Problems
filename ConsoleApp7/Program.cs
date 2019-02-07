@@ -1,15 +1,38 @@
-﻿using System;
+﻿using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
 using System.Text;
-using System.Threading.Tasks;
+using System;
 
-namespace ConsoleApp7
+class Solution
 {
-    class Program
+
+    // Complete the miniMaxSum function below.
+    static void miniMaxSum(int[] arr)
     {
-        static void Main(string[] args)
+        int total = 0;
+        for (int x = 0; x < arr.Length; x++)
         {
+            total += arr[x];
         }
+        int min = total - arr.Max();
+        int max = total - arr.Min();
+        Console.WriteLine(min + " " + max);
+
+    }
+
+    static void Main(string[] args)
+    {
+        int[] arr = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp))
+        ;
+        miniMaxSum(arr);
     }
 }
