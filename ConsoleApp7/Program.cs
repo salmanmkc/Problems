@@ -18,6 +18,7 @@ class Solution
     // Complete the miniMaxSum function below.
     static void miniMaxSum(int[] arr)
     {
+         //using long to support 64 bit values
         long total = 0;
         for (int x = 0; x < arr.Length; x++)
         {
