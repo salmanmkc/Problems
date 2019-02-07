@@ -18,13 +18,13 @@ class Solution
     // Complete the miniMaxSum function below.
     static void miniMaxSum(int[] arr)
     {
-        int total = 0;
+        long total = 0;
         for (int x = 0; x < arr.Length; x++)
         {
             total += arr[x];
         }
-        int min = total - arr.Max();
-        int max = total - arr.Min();
+        long min = total - arr.Max();
+        long max = total - arr.Min();
         Console.WriteLine(min + " " + max);
 
     }
