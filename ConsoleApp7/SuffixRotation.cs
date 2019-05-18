@@ -30,12 +30,26 @@ class SuffixRotation
     {
         bool ordered = false;
         int count = 0;
+        while(ordered == false)
+        {
+            char temp = s[0];
+            for(int i = 0; i < s.Length - 1; i++)
+            {
+                s[i] = s[i + 1];
+            }
+        }
+    }
+
+
+    private static int MoveOld(string s)
+    {
+        bool ordered = false;
+        int count = 0;
         while (ordered == false)
         {
             StringBuilder first = new StringBuilder();
             for (int strItr = 0; strItr < s.Length - 1; strItr++)
             {
-
                 first.Append(s[strItr + 1]);
             }
             first.Append(s[0]);
