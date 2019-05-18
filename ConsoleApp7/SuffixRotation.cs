@@ -30,8 +30,17 @@ class SuffixRotation
     {
         char[] s3 = new char[s.Length];
         char[] c = s.ToCharArray();
-        string s2 = null;
-        Array.Copy(c, 0, s3, 3, s.Length);
+        foreach(char ifjsfi in s)
+        {
+            Console.WriteLine(ifjsfi);
+        }
+        char temp = s[0];
+        char temp1 = s[1];
+        char temp2 = s[2];
+        Array.Copy(c, 0, s3, -3, s.Length-3);
+        s3[s.Length - 3] = temp;
+        s3[s.Length - 2] = temp1;
+        s3[s.Length - 1] = temp2;
         foreach(char c2 in s3)
         {
             Console.WriteLine(c2);
