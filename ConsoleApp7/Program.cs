@@ -30,10 +30,10 @@ class Solution
 
     }
 
-    static void Main(string[] args)
-    {
-        int[] arr = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp))
-        ;
-        miniMaxSum(arr);
-    }
+    //static void Main(string[] args)
+    //{
+    //    int[] arr = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp))
+    //    ;
+    //    miniMaxSum(arr);
+    //}
 }
