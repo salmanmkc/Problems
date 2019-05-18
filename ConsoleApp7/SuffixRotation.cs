@@ -21,86 +21,83 @@ class SuffixRotation
         for (int qItr = 0; qItr < q; qItr++)
         {
             string s = Console.ReadLine();
-            Console.WriteLine(Move(s));
+            MoveArrayCopy(s);
 
         }
     }
 
-    private static int Move(string s)
+    private static void MoveArrayCopy(string s)
     {
-        bool ordered = false;
-        int count = 0;
-        while(ordered == false)
+        char[] s3 = new char[s.Length];
+        char[] c = s.ToCharArray();
+        string s2 = null;
+        Array.Copy(c, 0, s3, 3, s.Length);
+        foreach(char c2 in s3)
         {
-            char temp = s[0];
-            for(int i = 0; i < s.Length - 1; i++)
-            {
-                s[i] = s[i + 1];
-            }
+            Console.WriteLine(c2);
         }
     }
 
+    //private static int MoveOld(string s)
+    //{
+    //    bool ordered = false;
+    //    int count = 0;
+    //    while (ordered == false)
+    //    {
+    //        StringBuilder first = new StringBuilder();
+    //        for (int strItr = 0; strItr < s.Length - 1; strItr++)
+    //        {
+    //            first.Append(s[strItr + 1]);
+    //        }
+    //        first.Append(s[0]);
+    //        string firstcompilled = first.ToString();
+    //        //Console.WriteLine(firstcompilled);
+    //        StringBuilder second = new StringBuilder();
+    //        for (int strItr = 0; strItr < s.Length - 1; strItr++)
+    //        {
 
-    private static int MoveOld(string s)
-    {
-        bool ordered = false;
-        int count = 0;
-        while (ordered == false)
-        {
-            StringBuilder first = new StringBuilder();
-            for (int strItr = 0; strItr < s.Length - 1; strItr++)
-            {
-                first.Append(s[strItr + 1]);
-            }
-            first.Append(s[0]);
-            string firstcompilled = first.ToString();
-            //Console.WriteLine(firstcompilled);
-            StringBuilder second = new StringBuilder();
-            for (int strItr = 0; strItr < s.Length - 1; strItr++)
-            {
+    //            second.Append(firstcompilled[strItr + 1]);
+    //        }
+    //        second.Append(firstcompilled[0]);
+    //        string secondcompilled = second.ToString();
+    //        //Console.WriteLine(secondcompilled);
+    //        StringBuilder third = new StringBuilder();
+    //        for (int strItr = 0; strItr < s.Length - 1; strItr++)
+    //        {
 
-                second.Append(firstcompilled[strItr + 1]);
-            }
-            second.Append(firstcompilled[0]);
-            string secondcompilled = second.ToString();
-            //Console.WriteLine(secondcompilled);
-            StringBuilder third = new StringBuilder();
-            for (int strItr = 0; strItr < s.Length - 1; strItr++)
-            {
+    //            third.Append(secondcompilled[strItr + 1]);
+    //        }
+    //        third.Append(secondcompilled[0]);
+    //        string OneMove = third.ToString();
+    //        //Console.WriteLine(OneMove);
 
-                third.Append(secondcompilled[strItr + 1]);
-            }
-            third.Append(secondcompilled[0]);
-            string OneMove = third.ToString();
-            //Console.WriteLine(OneMove);
+    //        char prev = OneMove[0];
+    //        bool allordered = false;
+    //        foreach (char c in OneMove)
+    //        {
+    //            if (c < prev)
+    //            {
+    //                allordered = false;
+    //                break;
+    //            }
+    //            else
+    //            {
+    //                allordered = true;
+    //                prev = c;
+    //            }
+    //        }
+    //        if (allordered == false)
+    //        {
+    //            count++;
+    //            Move(OneMove);
+    //        }
+    //        else
+    //        {
+    //            ordered = true;
+    //            break;
+    //        }
+    //    }
+    //    return count;
 
-            char prev = OneMove[0];
-            bool allordered = false;
-            foreach (char c in OneMove)
-            {
-                if (c < prev)
-                {
-                    allordered = false;
-                    break;
-                }
-                else
-                {
-                    allordered = true;
-                    prev = c;
-                }
-            }
-            if (allordered == false)
-            {
-                count++;
-                Move(OneMove);
-            }
-            else
-            {
-                ordered = true;
-                break;
-            }
-        }
-        return count;
-
-    }
+    //}
 }
